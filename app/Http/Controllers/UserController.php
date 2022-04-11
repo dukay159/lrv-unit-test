@@ -13,7 +13,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return response(['created'=>true],201);
+        // return response(['created'=>true],201);
     }
 
     /**
