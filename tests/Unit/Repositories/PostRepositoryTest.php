@@ -29,7 +29,7 @@ class PostRepositoryTest extends TestCase
         ]; 
         $post = $this->postRepository->create($postData); 
         // Check post created instance of Post 
-        $this->assertInstanceOf(Post::class, $post); //Hàm nãy sẽ thực hiện xác định kết quả so sánh có đúng intance mong muốn hay không
+        $this->assertInstanceOf(Post::class, $post); //Hàm nãy sẽ thực hiện xác định kết quả so sánh có đúng instance mong muốn hay không
         // Check data post exists in the database 
         $this->assertDatabaseHas('posts', $postData);
     }

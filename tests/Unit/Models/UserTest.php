@@ -7,6 +7,7 @@ use App\Models\Role;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Mockery;
 
 
 class UserTest extends TestCase
@@ -72,6 +73,19 @@ class UserTest extends TestCase
             $this->user,
             'role'
         );
+    }
+
+    public function test_get_full_name()
+    {
+        $user = new User;
+        $user->firstname = 'Duc';
+        $user->lastname = 'Anh';
+
+        $this->assertEquals('Duc Anh', $user->getFullName());
+
+
+        $userMock = Mockery::mock(User::class);
+        $this->userMock->shouldReceive('getFullName')->andReturn('Haposoft');
     }
 }
 

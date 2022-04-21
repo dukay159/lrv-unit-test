@@ -12,7 +12,7 @@ class DatabaseTest extends TestCase
      *
      * @return void
      */
-    public function test_example()
+    public function test_database()
     {
         $this->assertDatabaseHas('users', [
             'email'=>'admin@gmail.com1'
